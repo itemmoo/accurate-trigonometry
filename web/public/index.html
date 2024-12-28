@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <form name="myfrom">
+            <input type="text" name="mytxt" id="display" placeholder=""><br><br>
+            <input type="text" name="mytxtshow" id="degreeInput" readonly=""><br><br>
+
+            <button class="button" type="button" name="" value="sin" onclick="sinclick()">sin</button>
+            <button class="button" type="button" name="" value="cos" onclick="cosclick()">cos</button>
+            <button class="button" type="button" name="" value="tan" onclick="tanclick()">tan</button>
+            <button class="button" type="button" name="" value="csc" onclick="cscclick()">csc</button>
+            <button class="button" type="button" name="" value="sec" onclick="secclick()">sec</button>
+            <button class="button" type="button" name="" value="cot" onclick="cotclick()">cot</button>
+            <button class="button" type="button" onclick="clearDisplay()">C</button>
+
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
