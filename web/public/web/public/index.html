@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="button2" type="button" onclick="openManual()">เปิดคู่มือการใช้งาน</button>
+
+    <div id="userManual" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeManual()">&times;</span>
+            <h2>คู่มือการใช้งาน (User Manual)</h2>
+            <p><strong>การใช้งาน:</strong></p>
+            <ul>
+                <li><strong>เลขบวก (Addition):</strong> กดปุ่ม "+" เพื่อบวกเลข</li>
+                <li><strong>เลขลบ (Subtraction):</strong> กดปุ่ม "-" เพื่อหาผลลบ</li>
+                <li><strong>คูณ (Multiplication):</strong> กดปุ่ม "*" เพื่อคูณ</li>
+                <li><strong>หาร (Division):</strong> กดปุ่ม "/" เพื่อหาร</li>
+                <li><strong>ยกกำลัง (Power):</strong> กดปุ่ม "x<sup>y</sup>" เพื่อยกกำลัง</li>
+                <li><strong>รากที่สอง (Square Root):</strong> กดปุ่ม "√" เพื่อหาค่ารากที่สอง</li>
+                <li><strong>ฟังก์ชันตรีโกณมิติ:</strong> กดปุ่ม "sin", "cos", "tan" เพื่อคำนวณค่าไซน์, โคไซน์, และแทนเจนต์</li>
+                <li><strong>ลบตัวเลข (Clear):</strong> กดปุ่ม "C" เพื่อเคลียร์หน้าจอ</li>
+                <li><strong>ลบตัวเลข (Clear):</strong> กดปุ่ม "C" เพื่อเคลียร์หน้าจอ</li>
+                <li><strong>Example Usage</strong> Input: 2,3
+
+                <li>Press xⁿ
+                    Output: 8.00000 (since 2,3=8)
+                    Input: 5,0</li>
+
+                <li>Press xⁿ
+                    Output: 1.00000 (since 5,0=1)
+                    Input: 4,-2 Press xⁿ Output: 0.06250 (since 4,-2=1/16 4 -2 =1/16)
+                </li>
+            </ul>
+            <p><strong>วิธีการใช้:</strong></p>
+            <ul>
+                <li>กรอกค่าตัวเลขและฟังก์ชันที่ต้องการใช้</li>
+                <li>กด "=" เพื่อคำนวณผลลัพธ์</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="calculator">
+        <table align="center">
+        <form name="myfrom">
+        <tr>
+            <input type="text" name="mytxt" id="display" placeholder=""><br><br>
+        </tr>
+        <tr>
+            <input type="text" name="mytxtshow" id="degreeInput" readonly=""><br><br>
+        </tr>
+        <tr>
+            <td><button type="button" value="x^2" onclick="square()"> x<sup>2 </button> </td>
+            <td><button type="button" value="x^3" onclick="cubed()"> x<sup>3 </button> </td>
+            <td><button type="button" value="sqrt2" onclick="sqrt2()"> &radic; </button> </td>
+            <td><button type="button" value="sqrt3" onclick="sqrt3()"> &#8731; </button> </td>
+            <td><button type="button" value="1" onclick="number(value)"> 1 </button> </td>
+            <td><button type="button" value="2" onclick="number(value)"> 2 </button> </td>
+
+        </tr>
+        
+        <tr>
+            <td><button class="button" type="button" name="" value="sin" onclick="sinclick()">sin</button></td>
+            <td><button class="button" type="button" name="" value="cos" onclick="cosclick()">cos</button></td>
+            <td><button class="button" type="button" name="" value="tan" onclick="tanclick()">tan</button></td>
+            <td><button class="button" type="button" onclick="clearDisplay()">C</button></td>
+            <td><button type="button" value="3" onclick="number(value)"> 3 </button> </td>
+            <td><button type="button" value="4" onclick="number(value)"> 4 </button> </td>
+
+        </tr>
+        <tr>
+            <td><button class="button" type="button" name="" value="csc" onclick="cscclick()">csc</button></td>
+            <td><button class="button" type="button" name="" value="sec" onclick="secclick()">sec</button></td>
+            <td><button class="button" type="button" name="" value="cot" onclick="cotclick()">cot</button></td>
+            <td><button type="button" value="BACKSPC" onclick="BACKSPC()"> ⌫ </button> </td>
+            <td><button type="button" value="5" onclick="number(value)"> 5 </button> </td>
+            <td><button type="button" value="6" onclick="number(value)"> 6 </button> </td>
+
+        </tr>
+        <tr>
+            
+            <td><button class="button" type="button" value="+" onclick="number(value)"> + </button> </td>
+            <td><button type="button" value="*" onclick="number(value)"> * </button> </td>
+            <td><button type="button" value="-" onclick="number(value)"> - </button> </td>
+            <td><button class="button" type="button" onclick="logBase()">log<sub>b</sub></button></td>
+            <td><button type="button" value="7" onclick="number(value)"> 7 </button> </td>
+            <td><button type="button" value="8" onclick="number(value)"> 8 </button> </td>
+            
+        </tr>
+        <tr>
+            <td><button type="button" value="," onclick="number(value)"> , </button> </td>
+            <td><button class="button" type="button" onclick="factorial()">n!</button></td>
+            <td><button class="button" type="button" onclick="powerByN()">x<sup>n</sup></button></td>
+            <td><button class="button" type="button" onclick="logNatural()">ln</button></td>  
+            <td><button type="button" value="9" onclick="number(value)"> 9 </button> </td>
+            <td><button type="button" value="0" onclick="number(value)"> 0 </button> </td>
+        </tr>
+        <tr>
+            <td><button class="button" type="button" onclick="powerByN(-1)">x<sup>-1</sup></button></td>
+            <td><button class="button" type="button" onclick="powerByN(-2)">x<sup>-2</sup></button></td>
+            <td><button class="button" type="button" onclick="powerByN(-3)">x<sup>-3</sup></button></td>
+            <td><button class="button" type="button" onclick="powerByUser()">x<sup>-y</sup></button></td>
+            <td><button class="button" type="button" onclick="insertPi()">π</button></td>
+            <td><button class="button" type="button" onclick="powerByN()">x<sup>y</sup></button></td>
+        </tr>
+        <tr>
+            <td><button class="button1" type="button" onclick="equal()">=</button></td>
+        </tr>
+        </form>  
+        </table>
+
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
